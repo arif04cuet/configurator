@@ -19,7 +19,9 @@ class ProductItem extends Model
         'sku',
         'url',
         'product_id',
-        'name'
+        'name',
+        'photo',
+        'description'
     ];
 
     /**

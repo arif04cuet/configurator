@@ -31,7 +31,12 @@ class CategoryResource extends Resource
                 Forms\Components\Textarea::make('descrition')
                     ->columnSpanFull(),
                 Forms\Components\Select::make('category_id')
+                    ->label('Parent Category')
                     ->relationship('category', 'name'),
+
+                Forms\Components\Select::make('brand_id')
+                    ->label('Brand')
+                    ->relationship('brand', 'name'),
             ]);
     }
 
@@ -42,6 +47,9 @@ class CategoryResource extends Resource
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('category.name')
+                    ->numeric()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('brand.name')
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')

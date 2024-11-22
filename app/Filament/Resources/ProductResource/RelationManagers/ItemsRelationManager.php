@@ -30,6 +30,13 @@ class ItemsRelationManager extends RelationManager
                     ->unique(ignoreRecord: true)
                     ->url()
                     ->maxLength(255),
+
+                Forms\Components\FileUpload::make('photo')
+                    ->required()
+                    ->directory('products')
+                    ->image(),
+
+                Forms\Components\Textarea::make('description'),
             ]);
     }
 
@@ -38,6 +45,7 @@ class ItemsRelationManager extends RelationManager
         return $table
             ->recordTitleAttribute('sku')
             ->columns([
+                Tables\Columns\ImageColumn::make('photo'),
                 Tables\Columns\TextColumn::make('name'),
                 Tables\Columns\TextColumn::make('sku'),
                 Tables\Columns\TextColumn::make('url')
