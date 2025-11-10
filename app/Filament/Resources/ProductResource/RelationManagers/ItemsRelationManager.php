@@ -19,15 +19,15 @@ class ItemsRelationManager extends RelationManager
         return $form
             ->schema([
                 Forms\Components\TextInput::make('name')
-                    ->required()
-                    ->unique(ignoreRecord: true),
+                    ->required(),
+                //->unique(ignoreRecord: true),
                 Forms\Components\TextInput::make('sku')
                     ->required()
-                    ->unique(ignoreRecord: true)
+                    //->unique(ignoreRecord: true)
                     ->maxLength(255),
                 Forms\Components\TextInput::make('url')
                     ->required()
-                    ->unique(ignoreRecord: true)
+                    //->unique(ignoreRecord: true)
                     ->url()
                     ->maxLength(255),
 
