@@ -1,4 +1,6 @@
 #!/bin/bash
+PHP=/usr/local/php82/bin/php
+COMPOSER="/usr/local/bin/composer"
 
 # Turn on maintenance mode
 php artisan down || true
