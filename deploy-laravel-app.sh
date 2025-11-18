@@ -1,6 +1,4 @@
 #!/bin/bash
-PHP=/usr/local/php82/bin/php
-COMPOSER="/usr/local/bin/composer"
 
 # Turn on maintenance mode
 php artisan down || true
@@ -11,7 +9,7 @@ php artisan down || true
 git pull origin main
 
 # Install/update composer dependecies
-$PHP $COMPOSER install --no-interaction --prefer-dist --optimize-autoloader --no-dev
+composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev
 
 # Run database migrations
 php artisan migrate --force
